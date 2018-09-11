@@ -1,3 +1,27 @@
 <h1> FRONT WORKS !!</h1>
 
-<a routerLink="/front">reload Front team page </a>
+<div>
+    this is an absolute path :
+    <a mat-flat-button routerLink="/front">reload Front team page </a>
+</div>
+
+<br>
+
+<div>
+    this is a relative path : <a mat-stroked-button routerLink="front">reload Front team page</a>
+</div>
+
+<br>
+<div>
+    <h3>
+        list of front end developers
+    </h3>
+</div>
+<mat-list>
+    <mat-list-item class="pointer" (click)="showFrontDev(1)">Anouar</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="pointer" (click)="showFrontDev(2)">Mouad</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item class="pointer" (click)="showFrontDev(3)">Younes</mat-list-item>
+</mat-list>
+      

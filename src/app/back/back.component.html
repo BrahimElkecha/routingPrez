@@ -1,3 +1,14 @@
 <h1>
   BACK WORKS ALSO !!
 </h1>
+
+<button mat-flat-button (click)="onReloadBackTeamPage()"> Reload back team page dynamically</button>
+
+<hr>
+
+<a mat-flat-button [routerLink]="['/back', 1, 'show']"
+                   [queryParams]="{ canShow: '1'}"
+                   fragment="loading">Navigate to devBack 1 with queryParams and fragment template driven</a>
+<hr>
+
+<button mat-flat-button (click)="navigateToDevBackPage()">Navigate to devBack using queryParams and fragment in component</button>

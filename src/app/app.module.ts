@@ -9,14 +9,25 @@ import { BackComponent } from './back/back.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+
+import { MatToolbarModule,
+         MatButtonModule,
+         MatSidenavModule,
+         MatIconModule,
+         MatListModule } from '@angular/material';
+
+import {MatCardModule} from '@angular/material/card';
 
 import { RouterModule, Routes } from '@angular/router';
+import { DevFrontComponent } from './front/dev-front/dev-front.component';
+import { DevBackComponent } from './back/dev-back/dev-back.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'front', component: FrontComponent },
-  { path: 'back', component: BackComponent }
+  { path: 'front/:id', component: DevFrontComponent },
+  { path: 'back', component: BackComponent },
+  { path: 'back/:id/show', component: DevBackComponent }
 ];
 @NgModule({
   declarations: [
@@ -24,7 +35,9 @@ const appRoutes: Routes = [
     HomeComponent,
     FrontComponent,
     BackComponent,
-    MyNavComponent
+    MyNavComponent,
+    DevFrontComponent,
+    DevBackComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +48,7 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
