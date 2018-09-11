@@ -1,0 +1,41 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <!--
+        <a mat-list-item href="#">Home</a>
+        <a mat-list-item href="#">Front team</a>
+        <a mat-list-item href="#">Back team</a>
+      -->
+
+      <a mat-list-item routerLinkActive="active-class"
+                       [routerLinkActiveOptions]= "{ exact: true }"
+                       routerLink="home">Home</a>
+      <a mat-list-item routerLinkActive="active-class" routerLink="front">Front team</a>
+      <a mat-list-item routerLinkActive="active-class" routerLink="back">Back team</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="header-title">ROUTING Prez - By :  Brahim ELKECHA - 13/09/2018</div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="routing-prez-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
